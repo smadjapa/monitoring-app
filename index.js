@@ -1,6 +1,6 @@
 var http = require('http');
+var config = require('./config');
 const { request } = require('https');
-var url = require('url');
 var StringDecoder = require('string_decoder').StringDecoder;
 
 // Defining the server
@@ -59,8 +59,8 @@ var server = http.createServer(function(req,res){
 });
 
 //Start the server, and have it listen to port 3000
-server.listen(3000, function(){
-    console.log("The server is running on port 3000 now");
+server.listen(config.port, function(){
+    console.log("The server is running on port " + config.port + " in "+config.envName+" mode");
 });
 
 //Define the handlers
