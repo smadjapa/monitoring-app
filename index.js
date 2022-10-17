@@ -1,7 +1,8 @@
-var http = require('http');
-var https = require('https');
+//Declare dependancy
 var fs = require('fs');
 var url = require('url');
+var http = require('http');
+var https = require('https');
 var config = require('./config');
 var StringDecoder = require('string_decoder').StringDecoder;
 
@@ -20,6 +21,7 @@ var httpsServerOptions = {
     'key' : fs.readFileSync('./https/key.pem'),
     'cert' : fs.readFileSync('./https/cert.pem')
 };
+
 var httpsServer = https.createServer(httpsServerOptions,function(req,res){
     unifiedServer(req, res);
 });
